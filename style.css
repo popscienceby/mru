@@ -34,8 +34,8 @@ nav#navbar a {
   /* Style for each navigation link */
   .nav-link {
 	display: block;
-	width: 140px; /* Set the width of the button */
-	height: 140px; /* Set the height of the button */
+	width: 184px; /* Set the width of the button */
+	height: 184px; /* Set the height of the button */
 	background-color: black; /* Set the background color of the button */
 	color: white; /* Set the text color */
 	text-align: center;

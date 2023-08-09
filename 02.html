@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intro - Your Title</title>
-  <link rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro - Your Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#navbar-placeholder").load("http://localhost:8000/navbar.html"); // Load the navigation bar from the local server
+        });
+    </script>
 </head>
+
 <body>
-  <h1>Intro</h1>
-  <section class="main-section" id="Intro">
-    <header>
-      Nietoperzowe fakty i mity
-    </header>
-            <div id="content">
-                <img src="article02.png" alt="Header Image" style="width: 100%;">
-                
-              </div>
-    <p>
-     Nietoperzowe Fakty 1
-    </p>
+
+    <div class="main-body">
+
+        <div id="navbar-placeholder"></div>
+
+        <main id="main-doc">
+            <section class="main-section" id="Intro">
+                <header>
+                    Nietoperzowe fakty i mity
+                </header>
+                <div id="content">
+                    <img src="articles/article02.png" alt="Header Image" style="width: 100%;">
+
+                </div>
+            </section>
+        </main>
 </body>
+
 </html>

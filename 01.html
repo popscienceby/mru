@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title>MRU</title>
+    <meta name="Generator" content="Cocoa HTML Writer">
+    <meta name="CocoaVersion" content="2022.2">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function() {
+        $("#navbar-placeholder").load("http://localhost:8000/navbar.html"); // Load the navigation bar
+      });
+    </script>
+<script>
+  $(document).ready(function() {
+    var currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
+    var activeButtonId = currentPage.split(".")[0]; // Extract the button name
+
+    // Update the active button's image
+    $("#" + activeButtonId + " img").attr("src", "buttons/" + activeButtonId + "a.png");
+
+    // Loop through all buttons to set inactive images
+    $(".nav-link").each(function() {
+      var buttonId = $(this).attr("id");
+      if (buttonId !== activeButtonId) {
+        $("#" + buttonId + " img").attr("src", "buttons/" + buttonId + ".png");
+      }
+    });
+  });
+</script>
+</head>
+
+<body>
+	<div class="main-body">
+        
+        <div id="navbar-placeholder"></div> 
+
+		<main id="main-doc">
+			<section class="main-section" id="Intro">
+                <div id="content">
+                    <img src="articles/article01.png" alt="Header Image" style="width: 100%;">
+                    
+                  </div>
+			
+			</section>
+		</main>
+	</div>
+</body>
+</html>
