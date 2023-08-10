@@ -36,12 +36,12 @@ nav#navbar a {
 	display: block;
 	width: 184px; /* Set the width of the button */
 	height: 184px; /* Set the height of the button */
-	background-color: black; /* Set the background color of the button */
+	background-color: rgb(255, 255, 255); /* Set the background color of the button */
 	color: white; /* Set the text color */
 	text-align: center;
 	line-height: 40px; /* Center the text vertically */
 	margin: 5px 0; /* Add some margin to space the buttons */
-	border-radius: 10px; /* Add rounded corners */
+	border-radius: 0px; /* Add rounded corners */
 	text-decoration: none; /* Remove underline for links */
   }
   
