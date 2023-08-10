@@ -9,11 +9,13 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2022.2">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
+  <!-- 
+ <script>
     $(function () {
       $("#navbar-placeholder").load("http://localhost:8000/navbar.html"); // Load the navigation bar
     });
   </script>
+-->
   <script>
     $(document).ready(function () {
       var currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
@@ -61,7 +63,7 @@
     <div id="navbar-placeholder"></div>
 
     <main id="main-doc">
-      <section class="main-section" id="Intro">
+      <section class="main-section" id="article01">
         <div id="content">
           <img src="articles/article01.png" alt="Header Image" style="width: 100%;">
 
