@@ -7,6 +7,27 @@
   <title>Intro - Your Title</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentPage = "02"; // Update this value for each page
+      console.log("Current Page:", currentPage);
+  
+      const navbarButtons = document.querySelectorAll(".nav-link img");
+      console.log("Navbar Buttons:", navbarButtons);
+  
+      navbarButtons.forEach(button => {
+        const buttonNumber = button.getAttribute("alt").split(" ")[1];
+        console.log(`Button ${buttonNumber} - Initial Image:`, button.getAttribute("src"));
+  
+        const cacheBuster = new Date().getTime(); // Generate a cache-busting parameter
+        const imagePath = `buttons/button${buttonNumber}${buttonNumber === currentPage ? "a" : ""}.png?${cacheBuster}`;
+        console.log(`Button ${buttonNumber} - New Image Path:`, imagePath);
+  
+        button.setAttribute("src", imagePath);
+        console.log(`Button ${buttonNumber} - Updated Image:`, button.getAttribute("src"));
+      });
+    });
+  </script>
 </head>
 
 <body>

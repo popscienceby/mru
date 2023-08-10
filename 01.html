@@ -16,23 +16,27 @@
     });
   </script>
 -->
-  <script>
-    $(document).ready(function () {
-      var currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
-      var activeButtonId = currentPage.split(".")[0]; // Extract the button name
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = "01"; // Update this value for each page
+    console.log("Current Page:", currentPage);
 
-      // Update the active button's image
-      $("#" + activeButtonId + " img").attr("src", "buttons/" + activeButtonId + "a.png");
+    const navbarButtons = document.querySelectorAll(".nav-link img");
+    console.log("Navbar Buttons:", navbarButtons);
 
-      // Loop through all buttons to set inactive images
-      $(".nav-link").each(function () {
-        var buttonId = $(this).attr("id");
-        if (buttonId !== activeButtonId) {
-          $("#" + buttonId + " img").attr("src", "buttons/" + buttonId + ".png");
-        }
-      });
+    navbarButtons.forEach(button => {
+      const buttonNumber = button.getAttribute("alt").split(" ")[1];
+      console.log(`Button ${buttonNumber} - Initial Image:`, button.getAttribute("src"));
+
+      const cacheBuster = new Date().getTime(); // Generate a cache-busting parameter
+      const imagePath = `buttons/button${buttonNumber}${buttonNumber === currentPage ? "a" : ""}.png?${cacheBuster}`;
+      console.log(`Button ${buttonNumber} - New Image Path:`, imagePath);
+
+      button.setAttribute("src", imagePath);
+      console.log(`Button ${buttonNumber} - Updated Image:`, button.getAttribute("src"));
     });
-  </script>
+  });
+</script>
 </head>
 
 <body>
@@ -72,27 +76,7 @@
       </section>
     </main>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const currentPage = "01"; // Update this value for each page
-      console.log("Current Page:", currentPage);
-
-      const navbarButtons = document.querySelectorAll(".nav-link img");
-      console.log("Navbar Buttons:", navbarButtons);
-
-      navbarButtons.forEach(button => {
-        const buttonNumber = button.getAttribute("alt").split(" ")[1];
-        console.log(`Button ${buttonNumber} - Initial Image:`, button.getAttribute("src"));
-
-        const cacheBuster = new Date().getTime(); // Generate a cache-busting parameter
-        const imagePath = `buttons/button${buttonNumber}${buttonNumber === currentPage ? "a" : ""}.png?${cacheBuster}`;
-        console.log(`Button ${buttonNumber} - New Image Path:`, imagePath);
-
-        button.setAttribute("src", imagePath);
-        console.log(`Button ${buttonNumber} - Updated Image:`, button.getAttribute("src"));
-      });
-    });
-  </script>
+ 
 
 </body>
 
