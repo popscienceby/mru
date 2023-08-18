@@ -15,3 +15,5 @@ For Python 3.x:
 python -m http.server
 
 This will start a local server. You'll see an output indicating the IP address and port where your server is running (e.g., http://localhost:8000).
+
+Entry point http://localhost:8000/main.html
