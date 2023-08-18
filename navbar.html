@@ -25,14 +25,11 @@
     <script>
         $(function() {
           $("#tab01").show();
-          console.log('executed', $('.nav-link'));
           $('.nav-link').on('click', function(e) {
-            console.log('event: ', e);
             e.preventDefault();
             $('.tabs-content').hide();
             $('.nav-link').attr('aria-selected', false)
             $(this).attr('aria-selected', true);
-            console.log('href: ', $(this).attr('href'));
             let IDSelector = $(this).attr('href');
             $(IDSelector).show();
           })
