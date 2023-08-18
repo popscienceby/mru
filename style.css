@@ -5,6 +5,20 @@ div.main-body {
 	grid-gap: 20px;
 }
 
+.tabs-content {
+	display: none;
+}
+
+ul.tabs {
+	list-style-type: none;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+}
+
+a:not([aria-selected="true"]) {
+	opacity: 0.5;
+}
+
 
 /*
 nav#navbar {
@@ -46,11 +60,7 @@ nav#navbar a {
   }
   
   /* Style for the header */
-  #navbar header {
-	color: white; /* Set the text color of the header */
-	font-weight: bold;
-	margin-bottom: 10px;
-  }
+
   
 main#main-doc {
 	grid-area: mainContent;

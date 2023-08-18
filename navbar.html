@@ -1,11 +1,41 @@
 <nav id="inactivenavbar">
     <header>Wybierz rodział</header>
-    <a href="01.html" class="nav-link" id="button01">
-        <img src="buttons/button01.png" alt="Button 1"></a>
-    <a href="02.html" class="nav-link" id="button02"> 
-        <img src="buttons/button02.png" alt="Button 2"></a>
-    <a href="03.html" class="nav-link" id="button03">
-        <img src="buttons/button03.png" alt="Button 3"></a>
-    <a href="04.html" class="nav-link" id="button04">
-        <img src="buttons/button04.png" alt="Button 4"></a> 
+    <ul class="tabs" role="tablist">
+        <li>
+            <a aria-selected="true" role="tab" href="#tab01" class="nav-link" id="button01">
+                <img src="buttons/button01.png" alt="Button 1">
+            </a>
+        </li>
+        <li>
+            <a aria-selected="false" role="tab" href="#tab02" class="nav-link" id="button02"> 
+                <img src="buttons/button02.png" alt="Button 2">
+            </a>
+        </li>
+        <li>
+            <a aria-selected="false" role="tab" href="#tab03" class="nav-link" id="button03">
+                <img src="buttons/button03.png" alt="Button 3">
+            </a>
+        </li>
+        <li>
+            <a aria-selected="false" role="tab" href="#tab04" class="nav-link" id="button04">
+                <img src="buttons/button04.png" alt="Button 4">
+            </a> 
+        </li>
+    </ul>
+    <script>
+        $(function() {
+          $("#tab01").show();
+          console.log('executed', $('.nav-link'));
+          $('.nav-link').on('click', function(e) {
+            console.log('event: ', e);
+            e.preventDefault();
+            $('.tabs-content').hide();
+            $('.nav-link').attr('aria-selected', false)
+            $(this).attr('aria-selected', true);
+            console.log('href: ', $(this).attr('href'));
+            let IDSelector = $(this).attr('href');
+            $(IDSelector).show();
+          })
+        });
+    </script>
 </nav>
